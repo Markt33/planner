@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from '../images/tyler.jpg'
+import "./Header.css";
 
 export default function Header() {
 

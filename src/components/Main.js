@@ -6,8 +6,7 @@ export default function Main() {
         <main className='main'>
             <h2 className='main--header'>Plese Fill out the Fields below</h2>
 
-
-            <form>
+            <form className='form'> 
                 <label>
                     Name:
                     <input type="text" name="name" />

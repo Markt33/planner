@@ -1,29 +1,18 @@
 body {
     width: 960px;
     margin: auto;
-    background-color: lightgreen;
+    background-color: #f6f3e9;
 }
 
-.header {
+main{
+    position: absolute;
+    padding-top: 25%;
     display: flex;
-    align-items: right;
-    justify-content: space-between;
-    background-color: greenyellow;
-    padding: 16px;
-    border-radius: 0em 0em 3em 3em;
+    justify-content: start;
 }
-
-.header--p {
-    margin: 100px;
-
-}
-
-.header--h1 {
-    padding-top: 100px;
-    
-}
-
-.header--img {
-    border-radius: 10em;
-    margin-right: 0px;
+form{
+    position: absolute;
+    padding-top: 25%;
+    display: flex;
+    justify-content: flex-start;
 }
