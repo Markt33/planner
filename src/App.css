@@ -1,17 +1,105 @@
-/* html {
+/* Whole HTML Page */
+
+html {
     width: 960px;
-} */
+} 
+
+/* Header */
+
+.header {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    background-color: #277f4a;
+    color: white;
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+    align-items: right;
+    justify-content: space-between;
+    padding: 1px;
+    border-radius: 0em 0em .75em .75em;
+    margin: auto;
+}
+
+.header--p {
+    margin: 50px;
+}
+
+.header--h1 {
+    padding-top: 20px;
+    
+}
+
+.header--img {
+    border-radius: 5em;
+    margin-left: 15px;
+    width: 10%;
+}
+
+.header--keller{
+    border-radius: 5em;
+    margin-right: 15px;
+    width: 10%;
+}
+
+
+/* Main Page Content */
 
 main{
-    width: 960px;
-    position: absolute;
     padding-top: 25%;
     display: flex;
-    justify-content: start;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    align-items: center;
+    justify-content: center;
 }
+
+
+
 /* form{
     position: absolute;
     padding-top: 25%;
     display: flex;
     justify-content: flex-start;
 } */
+
+ 
+  .class-card {
+    width: 20%;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+
+    
+  }
+
+  .contain {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    justify-content: center;
+    padding-top: 50px;
+    margin: auto;
+    position: relative;
+    
+  }
+  
+  .form {
+    margin-bottom: 20px;
+  }
+
+  /* Footer Styles */
+
+  .footer{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    background-color: #277f4a;
+    color: white;
+    border-radius: .5em .5em 0em 0em;
+} 

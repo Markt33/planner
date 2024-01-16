@@ -62,10 +62,9 @@ export default function Main() {
                 </div>
             )}
 
-            <div>
                 {sub && (
-                    <div>
-                        <p>Selected Number of Classes per Quarter: {formData.classPreQ}</p>
+                    <div className='contain'>
+                        
                         {distributeClasses().map((quarter, index) => (
                             <div key={index} className="class-card">
                                 <h3>Quarter {index + 1}</h3>
@@ -78,7 +77,6 @@ export default function Main() {
                         ))}
                     </div>
                 )}
-            </div>
         </main>
     );
 }

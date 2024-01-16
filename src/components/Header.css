@@ -12,6 +12,7 @@
     justify-content: space-between;
     padding: 1px;
     border-radius: 0em 0em .75em .75em;
+    margin: auto;
 }
 
 .header--p {
@@ -24,6 +25,12 @@
 }
 
 .header--img {
+    border-radius: 5em;
+    margin-left: 15px;
+    width: 10%;
+}
+
+.header--keller{
     border-radius: 5em;
     margin-right: 15px;
     width: 10%;
