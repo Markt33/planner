@@ -4,7 +4,7 @@ export default function Main() {
     const [sub, setSub] = React.useState(false);
 
     const classNames = [
-        'Math97', 'ENG101', 'Lab Science', 'SDEV106', 'ENG 126, 127, 128 or 235',
+        'Math97', 'ENG101',  'SDEV106','Lab Science', 'ENG 126, 127, 128 or 235',
         'SDEV101', 'MATH141 or 147', 'CMST210, 220, 230 or 238', 'MATH146 or 256',
         'CS108', 'SDEV117', 'SDEV201', 'SDEV121', 'SDEV218', 'SDEV219', 'SDEV220', 'SDEV280'
     ];
@@ -56,17 +56,41 @@ export default function Main() {
     }
 
     const divideClasses = () => {
-        const classesToTake = formData.classPerQ; //3
+        const classesToTake = formData.classPreQ; //3
         const summerClass = formData.summerPreQ; //1
         const totalClasses = classNames.length; //17
-
-        const dividedArray = [];
+        let season = formData.classStart;
+        // console.log(quarter[formData.classStart])
         
+        const dividedArray = [];
 
-        for(let i = 0; i < totalClasses; i++){
-            dividedArray.push(classNames[i]);
+        let j = 0
+        console.log(classesToTake)
+        console.log(summerClass)
+        
+        while(j < totalClasses){
+            // console.log(season);
+            const subArray = []
+
+            if(season==3){
+                subArray.push(quarter[season])
+                for(let i = 0; i < summerClass; i++){
+                    subArray.push(classNames[j]);
+                    j++;
+                }
+
+            season = 0;
+            } else {
+                    subArray.push(quarter[season])
+                    for(let i = 0; i < classesToTake; i++){
+                    subArray.push(classNames[j]);
+                    j++;
+                }
+                season++;
+            }
+            
+            dividedArray.push(subArray)
         }
-
         console.log(dividedArray)
         return dividedArray;
     }
@@ -91,10 +115,10 @@ export default function Main() {
                             onChange={handleStartChange}
                         >
                             <option>-- Choose --</option>
-                            <option value={"Fall"}>Fall</option>
-                            <option value={"Winter"}>Winter</option>
-                            <option value={"Spring"}>Spring</option>
-                            <option value={"Summer"}>Summer</option>
+                            <option value={0}>Fall</option>
+                            <option value={1}>Winter</option>
+                            <option value={2}>Spring</option>
+                            <option value={3}>Summer</option>
                         </select>
 
                         <label htmlFor='classPreQ'>How many classes will you be taking per quarter?</label>
@@ -136,12 +160,15 @@ export default function Main() {
             )}
                 {sub && (
                     <div className='contain'>
-                        {divideClasses().map((quarter, index) =>(
-                            <div key={index}>
-                                {quarter}
-                            </div>
-                        ))}
-                    </div>
+                    {divideClasses().map((quarter, index) => (
+                        <div key={index}>
+                            <h2>{quarter[0]}</h2> {/* Display the quarter name */}
+                            {quarter.slice(1).map((className, classIndex) => (
+                                <div key={classIndex}>{className}</div>
+                            ))}
+                        </div>
+                    ))}
+                </div>
                 )}
         </main>
     );
