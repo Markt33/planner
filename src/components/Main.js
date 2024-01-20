@@ -161,7 +161,7 @@ export default function Main() {
                 {sub && (
                     <div className='contain'>
                     {divideClasses().map((quarter, index) => (
-                        <div key={index}>
+                        <div key={index} className='box'>
                             <h2>{quarter[0]}</h2> {/* Display the quarter name */}
                             {quarter.slice(1).map((className, classIndex) => (
                                 <div key={classIndex}>{className}</div>

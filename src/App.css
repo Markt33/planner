@@ -1,22 +1,12 @@
-/* Whole HTML Page */
-
-html {
-    width: 960px;
-} 
-
 /* Header */
-
 .header {
     display: flex;
-    position: absolute;
-    top: 0px;
-    left: 0px;
+    position: static;
+    padding: auto;
     width: 100%;
     text-align: center;
     background-color: #277f4a;
     color: white;
-    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
-    align-items: right;
     justify-content: space-between;
     padding: 1px;
     border-radius: 0em 0em .75em .75em;
@@ -47,17 +37,8 @@ html {
 
 /* Main Page Content */
 
-main{
-    padding-top: 25%;
-    display: flex;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    align-items: center;
-    justify-content: center;
-}
 
- 
+ /*
 .class-card {
     width: 20%;
     border: 1px solid #ddd;
@@ -78,20 +59,96 @@ main{
 li {
     text-align: left;
 }
+*/
+
   
 .form {
-    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    padding-top: 50px;
+    margin: auto;
+    position: fixed;
 }
+
+
+.contain {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 200px;
+    margin: auto;
+    position: relative;
+    background-color: antiquewhite;
+}
+
+.box{
+    width: 150px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 20px;
+
+}
+
+li {
+    text-align: left;
+}
+
 
   /* Footer Styles */
 
 .footer{
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
     text-align: center;
     background-color: #277f4a;
     color: white;
     border-radius: .5em .5em 0em 0em;
 } 
+
+@media screen and (max-width: 400px) {
+    .form{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        scroll-behavior: initial;
+        padding-bottom: 200px;
+        scroll-behavior: auto;
+    }
+    .contain{
+        position: fixed;
+        scroll-behavior: initial;
+    }
+    
+}
+
+/* tablet styles */
+@media screen and (min-width: 401px) and (max-width: 1200px) {
+    .form{
+        width: 100%;
+        padding: auto;
+        flex-wrap: auto;
+    }
+    .contain{
+        width: 100%;
+        position: relative;
+        scroll-behavior: auto;
+    }
+}
+
+/* desktop styles */
+@media screen and (min-width: 1201px) {
+    .form{
+        width: 100%;
+        flex-wrap: auto;
+    }
+    .contain{
+        width: 100%;
+        position: relative;
+        scroll-behavior: auto;
+    }
+}
