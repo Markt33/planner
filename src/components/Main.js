@@ -106,55 +106,61 @@ export default function Main() {
     return (
         <main className='main'>
             {!sub && (
-                <div>
+                <div className='container'>
                     <form className='form' onSubmit={handleSubmit}>
-                        <label htmlFor='classStart'>Which quarter will you start in?</label>
-                        <select
-                            id='classStart'
-                            value={formData.classStart}
-                            onChange={handleStartChange}
-                        >
-                            <option>-- Choose --</option>
-                            <option value={0}>Fall</option>
-                            <option value={1}>Winter</option>
-                            <option value={2}>Spring</option>
-                            <option value={3}>Summer</option>
-                        </select>
-
-                        <label htmlFor='classPreQ'>How many classes will you be taking per quarter?</label>
-                        <select
-                            id='classPreQ'
-                            value={formData.classPreQ}
-                            onChange={handleChange}
-                        >
-                            <option>-- Choose --</option>
-                            <option value={1}>1 Class</option>
-                            <option value={2}>2 Classes</option>
-                            <option value={3}>3 Classes</option>
-                        </select>
-
-                        <label htmlFor='summer'>
-                            Will you be taking summer classes?
-                            <input 
-                            type='checkbox'
-                            onChange={handleSummerChange}
-                            />
-                        </label>
-                        {formData.summer && 
-                        <div>
-                            <label htmlFor='summerPreQ'>How many classes will you be taking for the summer?</label>
+                        <div className='main--div'>
+                           <label htmlFor='classStart'>Which quarter will you start in?</label>
                             <select
-                                id='summerPreQ'
-                                value={formData.summerPreQ}
-                                onChange={handleSummerPreQChange}
+                                id='classStart'
+                                value={formData.classStart}
+                                onChange={handleStartChange}
+                            >
+                                <option>-- Choose --</option>
+                                <option value={0}>Fall</option>
+                                <option value={1}>Winter</option>
+                                <option value={2}>Spring</option>
+                                <option value={3}>Summer</option>
+                            </select> 
+                        </div>
+                        
+                        <div className='main--div'>
+                           <label htmlFor='classPreQ'>How many classes will you be taking per quarter?</label>
+                            <select
+                                id='classPreQ'
+                                value={formData.classPreQ}
+                                onChange={handleChange}
                             >
                                 <option>-- Choose --</option>
                                 <option value={1}>1 Class</option>
                                 <option value={2}>2 Classes</option>
-                            </select>   
-                        </div>}
+                                <option value={3}>3 Classes</option>
+                            </select>
+                        </div>
 
-                        <button>Submit</button>
+                        <div className='main--div'>
+                            <label htmlFor='summer'>
+                                Will you be taking summer classes?
+                                <input 
+                                type='checkbox'
+                                onChange={handleSummerChange}
+                                />
+                            </label> 
+                            {formData.summer && 
+                            <div>
+                                <label htmlFor='summerPreQ'>How many classes will you be taking for the summer?</label>
+                                <select
+                                    id='summerPreQ'
+                                    value={formData.summerPreQ}
+                                    onChange={handleSummerPreQChange}
+                                >
+                                    <option>-- Choose --</option>
+                                    <option value={1}>1 Class</option>
+                                    <option value={2}>2 Classes</option>
+                                </select>   
+                            </div>}
+                        </div>
+
+                        <button className='button'>Submit</button>
                     </form>
                 </div>
             )}
